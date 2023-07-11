@@ -1,6 +1,7 @@
 package pages.ShoppingCart;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -31,7 +32,17 @@ public class ShoppingCart extends BasePage {
     private By chooseAProduct = By.xpath("//div[@class='single-category-menu-inner']//a[@title='Albume foto'][normalize-space()='Albume foto']");
     private By addProductInCart = By.xpath("//form[@id='adauga_piesa_cos_90962']//span[contains(text(),'Adauga in cos')]");
     private By clickMyCart = By.xpath("//span[normalize-space()='Cosul meu']");
-    private By addAnotherAlbum = By.xpath("//div[@id='content_div_18257069']//span[@class='plus'][text()='+']");
+    private By addAnotherAlbum = By.xpath("//span[@class='plus']");
+    private By clickPasulUrmator = By.xpath("//span[text()='Pasul urmator']");
+    private By completeNameForOrder = By.xpath("//input[@id='nume_form_rapida']");
+    private By completeTelefonForOrder = By.xpath("//input[@id='telefon_form_rapida']");
+    private By inputEmailAdress = By.xpath("//input[@id='email_form_rapida']");
+    private By inputAresa = By.xpath("//input[@name='adresa']");
+    private By clickAlegeJudet=By.xpath("//select[@name='judet']");
+    private By clickAlegeLocalitate=By.id("aaa3");
+    private By clickRambursLaCurier=By.xpath("//span[text()='Ramburs la curier']");
+    private By clickAcord=By.xpath("//span[text()='Prin trimiterea comenzii accept termenii si conditiile epiesa.ro']");
+
 
     public void clickButton() {
         LOG.info("Click 'Produse' drop down button");
@@ -90,10 +101,57 @@ public class ShoppingCart extends BasePage {
         LOG.info("Click 'My Cart");
         driver.findElement(clickMyCart).click();
     }
+
     public void setAddAnotherAlbum() {
         LOG.info("Click add another 'Album foto HAMA Minimax 106262'");
         driver.findElement(addAnotherAlbum).click();
     }
+
+    public void setClickPasulUrmator() {
+        LOG.info("Click'Pasul Urmator' button");
+        driver.findElement(clickPasulUrmator).click();
+    }
+
+    public void setCompleteNameForOrder(String nume) {
+        LOG.info("Typing in 'Nume' field");
+        driver.findElement(completeNameForOrder).sendKeys(nume);
+    }
+
+    public void setCompleteTelefonForOrder(String telefon) {
+        LOG.info("Typing in 'Telefon' field");
+        driver.findElement(completeTelefonForOrder).sendKeys(telefon);
+    }
+
+    public void setInputEmailAdress(String email) {
+        LOG.info("Typing in 'Email' field");
+        driver.findElement(inputEmailAdress).sendKeys(email);
+    }
+
+    public void setInputAresa(String adresa){
+        LOG.info("Typing in 'Adresa' field");
+        driver.findElement(inputAresa).sendKeys(adresa);
+    }
+    public void setClickAlegeJudet(String judet) {
+        LOG.info("Click 'Judet' field");
+        driver.findElement(clickAlegeJudet).click();
+        driver.findElement(clickAlegeJudet).sendKeys(judet);
+        driver.findElement(clickAlegeJudet).sendKeys(Keys.ENTER);
+    }
+    public void setClickAlegeLocalitate(String localitatea) {
+        LOG.info("Click 'Localitate' field");
+        driver.findElement(clickAlegeLocalitate).click();
+        driver.findElement(clickAlegeLocalitate).sendKeys(localitatea);
+        driver.findElement(clickAlegeLocalitate).sendKeys(Keys.ENTER);
+    }
+    public void setClickRambursLaCurier() {
+        LOG.info("Click 'Ramburs la curier' radio button");
+        driver.findElement(clickRambursLaCurier).click();
+    }
+//    public void setClickAcord() {
+//        LOG.info("Click 'Prin trimiterea comenzii accept termenii si conditiile epiesa.ro' radio button");
+//        driver.findElement(clickAcord).click();
+//    }
+
 
 }
 

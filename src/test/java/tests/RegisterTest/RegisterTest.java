@@ -1,5 +1,6 @@
 package tests.RegisterTest;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
@@ -14,7 +15,7 @@ public class RegisterTest extends BaseTest {
 
 
     private String newUrl = returnBaseUrl();
-    String email = "pop.1650@yahoo.com";
+    String email = RandomStringUtils.randomAlphabetic(5) + "." + RandomStringUtils.randomAlphabetic(5) + "@gmail.com";
     String nume = "Pop";
     String prenume = "Maria";
     String parola="Mai1999";
