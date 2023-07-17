@@ -27,23 +27,30 @@ public class RegisterTest extends BaseTest {
 
         driver.get(newUrl);
 
-        sleep(3000);
         LOG.info("Typing email address in 'Email adress' field");
         registerPage.setInputEmailAdress(email);
-        sleep(3000);
+
         LOG.info("Typing in 'Name' field");
         registerPage.setInputName(nume);
-        sleep(2000);
+
         LOG.info("Typing in 'First Name' field");
         registerPage.setInputPrenume(prenume);
-        sleep(2000);
+
         LOG.info("Typing in 'Parola' field");
         registerPage.setInputParola(parola);
+
         LOG.info("Typing in 'Confirma parola' field");
         registerPage.confirmaParola(parola);
+
         LOG.info("Click 'Inregistrare' button");
         registerPage.inregistrareButton();
-        sleep(3000);
+
+        LOG.info("Click 'Contul Meu' button");
+        registerPage.clickContulMeuButton();
+
+        LOG.info("Click 'Delogheaza-ma' button");
+        registerPage.clickDelogheazaButton();
+
     }
 
 }

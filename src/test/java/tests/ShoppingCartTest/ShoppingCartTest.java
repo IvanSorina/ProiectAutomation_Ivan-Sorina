@@ -1,11 +1,10 @@
 package tests.ShoppingCartTest;
 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 import tests.BaseTest;
-
-import java.util.ServiceLoader;
 
 import static pages.BasePage.sleep;
 
@@ -21,49 +20,50 @@ public class ShoppingCartTest extends BaseTest {
         String judet = "Brasov";
         String localitate = "Fagaras";
 
-//
-//
-//
-//        LOG.info("Click 'Produse' drop down button");
-//        shoppingCart.clickButton();
-//        sleep(2000);
-//        LOG.info("Click 'GRADINA' drop down button");
-//        shoppingCart.setSelectProdusGradina();
-//        sleep(2000);
-//        LOG.info("Click 'Balansoare gradina' button");
-//        shoppingCart.setSelectMobilierGradina();
-//        sleep(3000);
-//        LOG.info("Click 'Balansoar HEINNER STBL001'");
-//        shoppingCart.setSelectProduct();
-//        sleep(3000);
-//        LOG.info("Click 'Adauga in cos' button");
-//        shoppingCart.setAddInCart();
-//        sleep(3000);
-//        shoppingCart.navigateBack();
-//        shoppingCart.navigateBack();
-//        shoppingCart.navigateBack();
-//        sleep(3000);
+
+        LOG.info("Click 'Produse' drop down button");
+        shoppingCart.clickButton();
+
+        LOG.info("Click 'GRADINA' drop down button");
+        shoppingCart.setSelectProdusGradina();
+
+        LOG.info("Click 'Balansoare gradina' button");
+        shoppingCart.setSelectMobilierGradina();
+
+        LOG.info("Click 'Balansoar HEINNER STBL001'");
+        shoppingCart.setSelectProduct();
+
+        LOG.info("Click 'Adauga in cos' button");
+        shoppingCart.setAddInCart();
+
+        shoppingCart.navigateBack();
+        shoppingCart.navigateBack();
+        shoppingCart.navigateBack();
+
         LOG.info("Click 'Produse' drop down button");
         shoppingCart.setProduseClickButton1();
-        sleep(3000);
+
         LOG.info("Click 'CASA SI BUCATARIE' button");
+        sleep(3000);
         shoppingCart.setSelectProductCasaSiBucatarie();
+
+        LOG.info("Click  product");
         sleep(3000);
-        LOG.info("Click 'Farfurii' product");
+
         shoppingCart.setChooseAProduct();
-        sleep(3000);
+
         LOG.info("Click 'Album foto HAMA Minimax 106262'");
         shoppingCart.setAddProductInCart();
-        sleep(3000);
+
         LOG.info("Click 'My Cart");
         shoppingCart.setClickMyCart();
-        sleep(3000);
-        LOG.info("Click add another 'Album foto HAMA Minimax 106262'");
-        shoppingCart.setAddAnotherAlbum();
-        sleep(3000);
+
+        LOG.info("Click add another product");
+        shoppingCart.setAddAnotherProduct();
+
         LOG.info("Click'Pasul Urmator' button");
         shoppingCart.setClickPasulUrmator();
-        sleep(3000);
+
         LOG.info("Typing in 'Nume' field");
         shoppingCart.setCompleteNameForOrder(nume);
         LOG.info("Typing in 'Telefon' field");
@@ -76,11 +76,9 @@ public class ShoppingCartTest extends BaseTest {
         shoppingCart.setClickAlegeJudet(judet);
         LOG.info("Click 'localitate' drop-down button");
         shoppingCart.setClickAlegeLocalitate(localitate);
-        sleep(4000);
+        LOG.info("Click 'Ramburs la curier' radio button");
         shoppingCart.setClickRambursLaCurier();
-        sleep(4000);
-//        shoppingCart.setClickAcord();
-//        sleep(4000);
-//    }
+
+
     }
-}
+    }

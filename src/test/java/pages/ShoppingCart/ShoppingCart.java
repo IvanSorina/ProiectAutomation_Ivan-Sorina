@@ -2,6 +2,8 @@ package pages.ShoppingCart;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -32,7 +34,7 @@ public class ShoppingCart extends BasePage {
     private By chooseAProduct = By.xpath("//div[@class='single-category-menu-inner']//a[@title='Albume foto'][normalize-space()='Albume foto']");
     private By addProductInCart = By.xpath("//form[@id='adauga_piesa_cos_90962']//span[contains(text(),'Adauga in cos')]");
     private By clickMyCart = By.xpath("//span[normalize-space()='Cosul meu']");
-    private By addAnotherAlbum = By.xpath("//span[@class='plus']");
+    private By addAnotherProduct = By.xpath("//span[@class='plus']");
     private By clickPasulUrmator = By.xpath("//span[text()='Pasul urmator']");
     private By completeNameForOrder = By.xpath("//input[@id='nume_form_rapida']");
     private By completeTelefonForOrder = By.xpath("//input[@id='telefon_form_rapida']");
@@ -41,11 +43,14 @@ public class ShoppingCart extends BasePage {
     private By clickAlegeJudet=By.xpath("//select[@name='judet']");
     private By clickAlegeLocalitate=By.id("aaa3");
     private By clickRambursLaCurier=By.xpath("//span[text()='Ramburs la curier']");
-    private By clickAcord=By.xpath("//span[text()='Prin trimiterea comenzii accept termenii si conditiile epiesa.ro']");
+
+
 
 
     public void clickButton() {
         LOG.info("Click 'Produse' drop down button");
+        WebDriverWait wait = new WebDriverWait(driver,5);
+        wait.until(ExpectedConditions.presenceOfElementLocated(produseClickButton));
         driver.findElement(produseClickButton).click();
     }
 
@@ -59,7 +64,7 @@ public class ShoppingCart extends BasePage {
         driver.findElement(selectMobilierGradina).click();
     }
 
-    //
+
     public void setSelectProduct() {
         LOG.info("Click 'Balansoar HEINNER STBL001'");
         driver.findElement(selectProduct).click();
@@ -88,7 +93,7 @@ public class ShoppingCart extends BasePage {
 
 
     public void setChooseAProduct() {
-        LOG.info("Click 'Farfurii' product");
+        LOG.info("Click product");
         driver.findElement(chooseAProduct).click();
     }
 
@@ -102,9 +107,9 @@ public class ShoppingCart extends BasePage {
         driver.findElement(clickMyCart).click();
     }
 
-    public void setAddAnotherAlbum() {
-        LOG.info("Click add another 'Album foto HAMA Minimax 106262'");
-        driver.findElement(addAnotherAlbum).click();
+    public void setAddAnotherProduct() {
+        LOG.info("Click add another product");
+        driver.findElement(addAnotherProduct).click();
     }
 
     public void setClickPasulUrmator() {
@@ -147,10 +152,7 @@ public class ShoppingCart extends BasePage {
         LOG.info("Click 'Ramburs la curier' radio button");
         driver.findElement(clickRambursLaCurier).click();
     }
-//    public void setClickAcord() {
-//        LOG.info("Click 'Prin trimiterea comenzii accept termenii si conditiile epiesa.ro' radio button");
-//        driver.findElement(clickAcord).click();
-//    }
+
 
 
 }

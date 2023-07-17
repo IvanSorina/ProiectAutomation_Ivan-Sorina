@@ -1,6 +1,8 @@
 package pages.RegisterPage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -29,6 +31,8 @@ public class RegisterPage extends BasePage {
     private By inputParola=By.xpath("//input[@name='parola']");
     private By confirmaParola=By.xpath("//input[@name='confirmare_parola']");
     private By clickInregistrareButton=By.xpath("//span[text()='Inregistrare']");
+    private By contulMeuButton = By.xpath("//span[normalize-space()='Contul meu']");
+    private By delogheazaButton = By.xpath("//div[@class='nav-item dropdown']//a[@class='dropdown-item'][normalize-space()='DELOGHEAZA-MA']");
 
     public void setInputEmailAdress(String email) {
         LOG.info("Typing email address in 'Email adress' field");
@@ -56,4 +60,15 @@ public class RegisterPage extends BasePage {
         LOG.info("Click 'Inregistrare' button");
         driver.findElement(clickInregistrareButton).click();
     }
+    public void clickContulMeuButton() {
+        LOG.info("Click 'Contul Meu' button");
+        driver.findElement(contulMeuButton).click();
+    }
+    public void clickDelogheazaButton() {
+        LOG.info("Click 'Delogheaza-ma' button");
+        WebDriverWait wait = new WebDriverWait(driver,5);
+        wait.until(ExpectedConditions.presenceOfElementLocated(delogheazaButton));
+        driver.findElement(delogheazaButton).click();
+    }
+
 }

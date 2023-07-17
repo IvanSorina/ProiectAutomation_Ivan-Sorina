@@ -1,6 +1,8 @@
 package pages.SignInPage;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import pages.BasePage;
@@ -26,8 +28,7 @@ public class SignInPage extends BasePage {
     private By inputEmailAdress = By.xpath("//input[@type='email']");
     private By inputPassword = By.xpath("//form[@name='form_autentificare']//input[@type='password']");
     private By autentificareButton = By.xpath("//label[@class='show-lg']");
-//    private By errorMsg = By.xpath("//p[text()=\"Parola introdusa este incorecta !\"]");
-//    private By recuperareParola = By.xpath("//input[@name='email_recuperare']");
+
 
     public boolean isContulMeuButtonDisplayed() {
         LOG.info("Check if 'Contul Meu' button is displayed");
@@ -56,56 +57,13 @@ public class SignInPage extends BasePage {
 
     public void clickAutentificareButton() {
         LOG.info("Click 'Autentificare' button");
+        WebDriverWait wait = new WebDriverWait(driver,5);
+        wait.until(ExpectedConditions.presenceOfElementLocated(autentificareButton));
         driver.findElement(autentificareButton).click();
     }
 }
 
 
-//    public boolean getErrorMsg() {
-//        LOG.info("Check if 'Error message' is displayed");
-//        return driver.findElement(errorMsg).isDisplayed();
-//    }
-//    public void recuperareCuEmailAdress(String email){
-//        if(driver.findElement(errorMsg).isDisplayed()) {
-//            LOG.info("Typing email address in 'Recuperare parola' field");
-//            driver.findElement(recuperareParola).sendKeys(email);
-//
-//        }
-//    }
-//public void mesajEroareDisplayed() {
-//    LOG.info("Check if 'Parola introdusa este incorecta !' message is displayed");
-//    if (driver.findElement(errorMsg).isDisplayed()) {
-//        public void insertEmail(String email){
-//            LOG.info("Complete the field");
-//            driver.findElement(recuperareParola).sendKeys(email);
-//        }
-//    }
-//}
-//}
-
-
-//
-//        LOG.info("Verifying if error message is displayed");
-//        return driver.findElement(errorMsg).isDisplayed();
-//
-//    }
-//
-//       if( isErrorMessageDisplayed())
-//       {
-//        LOG.info("Verifying if error message is displayed");
-//        return driver.findElement(errorMsg).isDisplayed();
-//        {
-//        String email='elena.sorina50@yahoo.com';
-//        public void emailRecuperareParola(String email) {
-//        LOG.info("Typing email address in 'Recuperare parola' field");
-//        driver.findElement(recuperareParolaButton).sendKeys(email);
-//    }
-
-//    public class emailRecuperare{
-//        if (msg==errorMsg)
-//        {
-//
-//        }
 
 
 
